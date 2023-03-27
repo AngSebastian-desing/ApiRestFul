@@ -63,7 +63,5 @@ public class Poliza {
     public void setFecha(Date Fecha) {
         this.Fecha = Fecha;
     }
-    
-    
-
+   
 }
