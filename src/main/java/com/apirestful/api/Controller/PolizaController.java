@@ -51,7 +51,7 @@ public class PolizaController {
     
     @PostMapping("/polizas")
      public ResponseEntity<Void> grabar(@RequestBody Poliza poliza) throws SQLException{
-            polizaService.generarPoliza(poliza.getSku(), poliza.getCantidadPoliza(), poliza.getEmpleadoGenero());
+        polizaService.generarPoliza(poliza.getSku(), poliza.getCantidadPoliza(), poliza.getEmpleadoGenero());
         return ResponseEntity.ok().build();
      }
     

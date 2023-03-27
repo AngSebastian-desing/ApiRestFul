@@ -41,7 +41,7 @@ public class PolizaService {
         polizaRepo.deleteById(poliza);
     }
     
-    public void generarPoliza(Integer v_sku, int v_cantidad, int v_empleado_genero) throws SQLException {
+    public int generarPoliza(Integer v_sku, int v_cantidad, int v_empleado_genero) throws SQLException {
         String sqlCallFunction = "{call generar_poliza(?, ?, ?, ?, ?)}";
         CallableStatement cs = jdbcTemplate.getDataSource().getConnection().prepareCall(sqlCallFunction);
 
@@ -63,6 +63,8 @@ public class PolizaService {
             // la operación falló
             System.out.println(mensaje);
         }
+        
+        return estado;
     }
     
 
